@@ -120,6 +120,7 @@ a.more {
 .hero {
   background-image: url(../images/backroundsumut2.jpg);
   background-size: cover;
+  background-position: center; 
   padding: calc(4rem - 30px) 0 0rem 0;
 }
 
@@ -139,7 +140,7 @@ a.more {
 }
 @media (min-width: 992px) {
   .hero .intro-excerpt {
-    max-width: 550px;
+    max-width: 100%;
   }
 }
 .hero h1 {
