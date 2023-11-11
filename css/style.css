@@ -118,9 +118,13 @@ a.more {
 }
 
 .hero {
-  background: #ffffff;
+  background-color: rgba(228, 13, 13, 0.5); /* Warna latar belakang transparan 50% */
+  background-image: url(../images/backroundsumut2.jpg);
+  background-size: cover; /* Untuk membuat gambar latar belakang full */
+  background-position: center; /* Memposisikan gambar latar belakang di tengah */
   padding: calc(4rem - 30px) 0 0rem 0;
 }
+
 @media (min-width: 768px) {
   .hero {
     padding: calc(4rem - 30px) 0 4rem 0;
@@ -137,12 +141,12 @@ a.more {
 }
 @media (min-width: 992px) {
   .hero .intro-excerpt {
-    max-width: 450px;
+    max-width: 550px;
   }
 }
 .hero h1 {
   font-weight: 700;
-  color: #083248;
+  color: #ffffff;
   margin-bottom: 30px;
 }
 @media (min-width: 1400px) {
@@ -151,7 +155,8 @@ a.more {
   }
 }
 .hero p {
-  color: #083248;
+  color: #ffffff;
+  font-size: 1em;
   font-weight: 500;
 }
 .hero .hero-img-wrap {
@@ -159,7 +164,9 @@ a.more {
 }
 .hero .hero-img-wrap img {
   position: relative;
-  top: 0px;
+  padding-top: 25%;
+  padding-left: 5%;
+  top: 20px;
   right: 0px;
   z-index: 2;
   max-width: 1080px;
@@ -191,7 +198,7 @@ a.more {
   position: absolute;
   width: 255px;
   height: 217px;
-  background-image: url("../images/dots-yellow.svg");
+
   background-size: contain;
   background-repeat: no-repeat;
   right: -100px;
