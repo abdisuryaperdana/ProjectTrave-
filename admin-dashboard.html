@@ -89,29 +89,29 @@
 				  <button class="custom-btn btn-12" onclick="openPopupForm()"><span>Click!</span><span>Tambah Booking</span></button>
 				  
 				  <!-- Form PopUp -->
-				  <div id="popup-form" class="popup-form">
-					<div class="form-container">
-					  <span class="close" onclick="closePopupForm()">&times;</span>
-					  <h2>Form Booking</h2>
-					  <form id="booking-form">
-						<label for="nama">Nama:</label>
-						<input type="text" id="nama" name="nama" required>
-				  
-						<label for="no-hp">No HP:</label>
-						<input type="text" id="no-hp" name="no-hp" required>
-				  
-						<label for="jumlah-orang">Jumlah Orang:</label>
-						<input type="number" id="jumlah-orang" name="jumlah-orang" required>
-				  
-						<label for="hari">Hari:</label>
-						<input type="text" id="hari" name="hari" required>
-				  
-						<label for="kegiatan">Kegiatan:</label>
-						<input type="text" id="kegiatan" name="kegiatan" required>
-				  
-						<button type="button" onclick="submitForm()">Tambah Booking</button>
-					  </form>
+					<div id="popup-form" class="popup-form">
+						<div class="wrapper fadeInDown">
+						<span class="close" onclick="closePopupForm()">&times;</span>
+						<div id="formContent">
+							<!-- Icon -->
+							<div class="fadeIn first">
+								<img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
+							</div>
+							<!-- Tabs Titles -->
+							<h5>Tambah Data Booking</h5>
+						  <!-- Login Form -->
+						  <form>
+							<input type="text" id="nama" class="fadeIn second" name="nama" placeholder="Nama">
+							<input type="text" id="no-hp" class="fadeIn second" name="no-hp" placeholder="No Handphone">
+							<input type="text" id="jumlah-orang" class="fadeIn second" name="jumlah-orang" placeholder="Jumlah Orang">
+							<input type="text" id="hari-tgl" class="fadeIn second" name="hari-tgl" placeholder="Hari/Tanggal">
+							<input type="text" id="kegiatan" class="fadeIn second" name="kegiatan" placeholder="Kegiatan">
+							<input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
+							
+						  </form>
+						</div>
 					</div>
+					  </div>
 				  
 				</div>
 				</div>

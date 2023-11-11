@@ -12,6 +12,8 @@ function openPopupForm() {
     var nama = document.getElementById('nama').value;
     var noHp = document.getElementById('no-hp').value;
     var jumlahOrang = document.getElementById('jumlah-orang').value;
+    var hari = document.getElementById('hari-tgl').value;
+    var kegiatan = document.getElementById('kegiatan').value;
 
   
     // Lakukan sesuatu dengan nilai inputan, misalnya kirim ke server atau tampilkan di console
