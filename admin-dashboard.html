@@ -14,6 +14,7 @@
 		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
 		<link href="css/tiny-slider.css" rel="stylesheet">
 		<link href="css/styleadmindashboard.css" rel="stylesheet">
+		<script src="./js/forminputbooking.js"></script>
 		<title>SmutOur Sumatera Utara Tour</title>
 	</head>
 
@@ -85,8 +86,35 @@
 			<div class="container-list">
 				<div class="title-list">List of Booking</div>
 				<div class="button-container">
-				  <button class="custom-btn btn-12"><span>Click!</span><span>Tambah Booking</span></button>
+				  <button class="custom-btn btn-12" onclick="openPopupForm()"><span>Click!</span><span>Tambah Booking</span></button>
+				  
+				  <div id="popup-form" class="popup-form">
+					<div class="form-container">
+					  <span class="close" onclick="closePopupForm()">&times;</span>
+					  <h2>Form Booking</h2>
+					  <form id="booking-form">
+						<label for="nama">Nama:</label>
+						<input type="text" id="nama" name="nama" required>
+				  
+						<label for="no-hp">No HP:</label>
+						<input type="text" id="no-hp" name="no-hp" required>
+				  
+						<label for="jumlah-orang">Jumlah Orang:</label>
+						<input type="number" id="jumlah-orang" name="jumlah-orang" required>
+				  
+						<label for="hari">Hari:</label>
+						<input type="text" id="hari" name="hari" required>
+				  
+						<label for="kegiatan">Kegiatan:</label>
+						<input type="text" id="kegiatan" name="kegiatan" required>
+				  
+						<button type="button" onclick="submitForm()">Tambah Booking</button>
+					  </form>
+					</div>
+				  
 				</div>
+				</div>
+				
 			</div>
 			  
 			
@@ -458,12 +486,6 @@
                 </section>
                 </div>
                 <!-- End List of Pameran -->
-			  
-
-		<!-- Start Footer Section -->
-		
-		<!-- End Footer Section -->	
-
 
 		<script src="js/bootstrap.bundle.min.js"></script>
 		<script src="js/tiny-slider.js"></script>
