@@ -1,3 +1,4 @@
+// form input booking
 function openPopupForm() {
     document.getElementById('popup-form').style.display = 'flex';
   }
