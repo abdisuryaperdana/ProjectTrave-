@@ -181,6 +181,43 @@
 											
 										</tbody>
 									</table>
+									
+									<!-- Code To Get API -->
+									<script>
+										document.addEventListener("DOMContentLoaded", function () {
+											// Fetch data from the API
+											fetch('http://localhost:8000/booked')
+												.then(response => response.json())
+												.then(data => {
+													// Populate the table with data
+													const bookingTable = document.getElementById('data-table');
+													const tbody = bookingTable.querySelector('tbody');
+								
+													data.forEach(item => {
+														const row = document.createElement('tr');
+														row.innerHTML = `
+															<td class="text-bold-500">${item.nama}</td>
+															<td class="text-td">${item.nomor_handphone}</td>
+															<td class="text-td">${item.jumlah_orang}</td>
+															<td class="text-td">${item.hari_tgl}</td>
+															<td class="text-td">${item.kegiatan}</td>
+															<td>
+																<button class="icon-button">
+																	<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
+																</button>
+																<button class="icon-button">
+																	<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
+																</button>
+															</td>
+														`;
+														tbody.appendChild(row);
+													});
+												})
+												.catch(error => console.error('Error fetching data:', error));
+										});
+									</script>
+
+
 								</div>
 							</div>
 						</div>
@@ -217,6 +254,7 @@
                                                     <th class="th-deskfestival">DESKRIPSI</th>
                                                     <th class="th-jadwalfestival">JADWAL</th>
                                                     <th class="th-lokasifestival">LOKASI</th>
+													<th class="th-gmaps">GMAPS</th>
                                                     <th class="th-actionfestival">ACTION</th>
                                                 </tr>
                                             </thead>
@@ -226,6 +264,7 @@
                                                     <td class="text-td">Ya'ahowu.jpg</td>
                                                     <td>Samosir Music International (SMI) merupakan rangkaian dari Horas Samosir Fiesta yang diselenggarakan setiap Tahun , event ini merupakan salah satu program untuk meningkatkan nilai wisata dan budaya Samosir.</td>
                                                     <td class="text-td">16 - 20 November 2023</td>
+													<td class="text-td">Kabupaten Nias</td>
                                                     <td class="text-td">https://maps.app.goo.gl/w3ehVnzJBtwnK3Md6</td>
                                                     <td>
                                                         <button class="icon-button">
@@ -243,6 +282,7 @@
                                                     <td class="text-td">Tobafest.jpg</td>
                                                     <td>Karnaval Pesona Danau Toba merupakan event tahunan Kabupaten Toba Samosir merujuk kepada Instruksi Presiden pada Karnaval Kemerdekaan Pesona Danau Toba Tahun 2016.</td>
                                                     <td class="text-td">3 - 5 Juli 2024</td>
+													<td class="text-td">Danau Toba</td>
                                                     <td class="text-td">https://maps.app.goo.gl/yU3WN86vhyASsmdq6</td>
                                                     <td>
                                                         <button class="icon-button">
@@ -257,6 +297,43 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
+										<!-- Code to Get API -->
+										<script>
+											document.addEventListener("DOMContentLoaded", function () {
+												// Fetch data from the API
+												fetch('http://localhost:8000/festival')
+													.then(response => response.json())
+													.then(data => {
+														// Populate the table with data
+														const festivalTable = document.getElementById('festival-table');
+														const tbody = festivalTable.querySelector('tbody');
+									
+														data.forEach(item => {
+															const row = document.createElement('tr');
+															row.innerHTML = `
+																<td class="text-bold-500">${item.nama_kegiatan}</td>
+																<td class="text-td">${item.foto}</td>
+																<td>${item.deskripsi}</td>
+																<td class="text-td">${item.jadwal}</td>
+																<td class="text-td">${item.lokasi}</td>
+																<td class="text-td">${item.gmaps}</td>
+																<td>
+																	<button class="icon-button">
+																		<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
+																	</button>
+																	<button class="icon-button">
+																		<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
+																	</button>
+																</td>
+															`;
+															tbody.appendChild(row);
+														});
+													})
+													.catch(error => console.error('Error fetching data:', error));
+											});
+										</script>
+
                                     </div>
                                 </div>
                             </div>
@@ -293,6 +370,7 @@
                                                     <th class="th-deskfestival">DESKRIPSI</th>
                                                     <th class="th-jadwalfestival">JADWAL</th>
                                                     <th class="th-lokasifestival">LOKASI</th>
+													<th class="th-gmaps">GMAPS</th>
                                                     <th class="th-actionfestival">ACTION</th>
                                                 </tr>
                                             </thead>
@@ -302,6 +380,7 @@
                                                     <td class="text-td">Gemas.png</td>
                                                     <td>Gelar Melayu Serumpun (GEMES) Kota Medan merupakan kegiatan yang mempertemukan Seni Budaya Etnis Melayu yang serumpun yang berasal dari berbagai negara Asia Tenggara dan Nusantara. </td>
                                                     <td class="text-td">6 - 8 November 2023</td>
+													<td class="text-td">Kota Medan</td>
                                                     <td class="text-td">https://maps.app.goo.gl/4KZtWPsQoMF1WuP56</td>
                                                     <td>
                                                         <button class="icon-button">
@@ -319,6 +398,7 @@
                                                     <td class="text-td">SamMusic.png</td>
                                                     <td>Samosir Music International (SMI) merupakan rangkaian dari Horas Samosir Fiesta yang diselenggarakan setiap Tahun , event ini merupakan salah satu program untuk meningkatkan nilai wisata dan budaya Samosir.</td>
                                                     <td class="text-td">7 - 8 Agustus 2023</td>
+													<td class="text-td">Pulau Samosir</td>
                                                     <td class="text-td">https://maps.app.goo.gl/TsRtsPez2a3y6giu8</td>
                                                     <td>
                                                         <button class="icon-button">
@@ -333,6 +413,43 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
+										<!-- Code To Get API -->
+										<script>
+											document.addEventListener("DOMContentLoaded", function () {
+												// Fetch data from the API
+												fetch('http://localhost:8000/pameran')
+													.then(response => response.json())
+													.then(data => {
+														// Populate the table with data
+														const festivalTable = document.getElementById('festival-table');
+														const tbody = festivalTable.querySelector('tbody');
+									
+														data.forEach(item => {
+															const row = document.createElement('tr');
+															row.innerHTML = `
+																<td class="text-bold-500">${item.nama_kegiatan}</td>
+																<td class="text-td">${item.foto}</td>
+																<td>${item.deskripsi}</td>
+																<td class="text-td">${item.jadwal}</td>
+																<td class="text-td">${item.lokasi}</td>
+																<td class="text-td">${item.gmaps}</td>
+																<td>
+																	<button class="icon-button">
+																		<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
+																	</button>
+																	<button class="icon-button">
+																		<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
+																	</button>
+																</td>
+															`;
+															tbody.appendChild(row);
+														});
+													})
+													.catch(error => console.error('Error fetching data:', error));
+											});
+										</script>
+
                                     </div>
                                 </div>
                             </div>

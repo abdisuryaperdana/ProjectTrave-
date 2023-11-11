@@ -265,9 +265,12 @@ a {
     }
 
     .th-actionfestival{
-      width: 150px;
+      width: 200px;
     }
 
+    .th-gmaps{
+      width: 150px;
+    }
 
     .tr-thead{
       background-color: #ff9500;
