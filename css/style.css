@@ -118,14 +118,8 @@ a.more {
 }
 
 .hero {
-<<<<<<< HEAD
-  background: #358097;
-=======
-  background-color: rgba(228, 13, 13, 0.5); /* Warna latar belakang transparan 50% */
   background-image: url(../images/backroundsumut2.jpg);
-  background-size: cover; /* Untuk membuat gambar latar belakang full */
-  background-position: center; /* Memposisikan gambar latar belakang di tengah */
->>>>>>> 0aacaee25fe8d240074ac42456cff464b86ca807
+  background-size: cover;
   padding: calc(4rem - 30px) 0 0rem 0;
 }
 
@@ -164,6 +158,7 @@ a.more {
 }
 .hero .hero-img-wrap {
   position: relative;
+  margin-top: 25%;
 }
 .hero .hero-img-wrap img {
   position: relative;
