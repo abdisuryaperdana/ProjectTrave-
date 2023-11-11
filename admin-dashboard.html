@@ -181,6 +181,43 @@
 											
 										</tbody>
 									</table>
+									
+									<!-- Code To Get API -->
+									<script>
+										document.addEventListener("DOMContentLoaded", function () {
+											// Fetch data from the API
+											fetch('your_api_endpoint_here')
+												.then(response => response.json())
+												.then(data => {
+													// Populate the table with data
+													const bookingTable = document.getElementById('data-table');
+													const tbody = bookingTable.querySelector('tbody');
+								
+													data.forEach(item => {
+														const row = document.createElement('tr');
+														row.innerHTML = `
+															<td class="text-bold-500">${item.nama}</td>
+															<td class="text-td">${item.nomor_handphone}</td>
+															<td class="text-td">${item.jumlah_orang}</td>
+															<td class="text-td">${item.hari_tgl}</td>
+															<td class="text-td">${item.kegiatan}</td>
+															<td>
+																<button class="icon-button">
+																	<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
+																</button>
+																<button class="icon-button">
+																	<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
+																</button>
+															</td>
+														`;
+														tbody.appendChild(row);
+													});
+												})
+												.catch(error => console.error('Error fetching data:', error));
+										});
+									</script>
+
+
 								</div>
 							</div>
 						</div>
@@ -260,6 +297,43 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
+										<!-- Code to Get API -->
+										<script>
+											document.addEventListener("DOMContentLoaded", function () {
+												// Fetch data from the API
+												fetch('your_api_endpoint_here')
+													.then(response => response.json())
+													.then(data => {
+														// Populate the table with data
+														const festivalTable = document.getElementById('festival-table');
+														const tbody = festivalTable.querySelector('tbody');
+									
+														data.forEach(item => {
+															const row = document.createElement('tr');
+															row.innerHTML = `
+																<td class="text-bold-500">${item.nama_kegiatan}</td>
+																<td class="text-td">${item.foto}</td>
+																<td>${item.deskripsi}</td>
+																<td class="text-td">${item.jadwal}</td>
+																<td class="text-td">${item.lokasi}</td>
+																<td class="text-td">${item.gmaps}</td>
+																<td>
+																	<button class="icon-button">
+																		<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
+																	</button>
+																	<button class="icon-button">
+																		<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
+																	</button>
+																</td>
+															`;
+															tbody.appendChild(row);
+														});
+													})
+													.catch(error => console.error('Error fetching data:', error));
+											});
+										</script>
+
                                     </div>
                                 </div>
                             </div>
@@ -339,6 +413,43 @@
                                                 </tr>
                                             </tbody>
                                         </table>
+
+										<!-- Code To Get API -->
+										<script>
+											document.addEventListener("DOMContentLoaded", function () {
+												// Fetch data from the API
+												fetch('your_api_endpoint_here')
+													.then(response => response.json())
+													.then(data => {
+														// Populate the table with data
+														const festivalTable = document.getElementById('festival-table');
+														const tbody = festivalTable.querySelector('tbody');
+									
+														data.forEach(item => {
+															const row = document.createElement('tr');
+															row.innerHTML = `
+																<td class="text-bold-500">${item.nama_kegiatan}</td>
+																<td class="text-td">${item.foto}</td>
+																<td>${item.deskripsi}</td>
+																<td class="text-td">${item.jadwal}</td>
+																<td class="text-td">${item.lokasi}</td>
+																<td class="text-td">${item.gmaps}</td>
+																<td>
+																	<button class="icon-button">
+																		<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
+																	</button>
+																	<button class="icon-button">
+																		<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
+																	</button>
+																</td>
+															`;
+															tbody.appendChild(row);
+														});
+													})
+													.catch(error => console.error('Error fetching data:', error));
+											});
+										</script>
+
                                     </div>
                                 </div>
                             </div>
