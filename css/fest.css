@@ -134,7 +134,7 @@ a.more {
 }
 @media (min-width: 992px) {
   .hero .intro-excerpt {
-    max-width: 700px;
+    max-width: 100%;
   }
 }
 .hero h1 {
@@ -228,12 +228,12 @@ a.more {
   box-shadow: none;
 }
 .btn.btn-primary {
-  background: #3b5d50;
-  border-color: #3b5d50;
+  background: #165163;
+  border-color: #165163;
 }
 .btn.btn-primary:hover {
-  background: #314d43;
-  border-color: #314d43;
+  background: #074b60;
+  border-color: #074b60;
 }
 .btn.btn-secondary {
   color: #2f2f2f;
@@ -287,7 +287,7 @@ a.more {
 }
 .product-section .product-item h3,
 .product-section .product-item strong {
-  color: #2f2f2f;
+  color: #074b60;
   text-decoration: none;
 }
 .product-section .product-item .icon-cross {
@@ -295,7 +295,7 @@ a.more {
   width: 35px;
   height: 35px;
   display: inline-block;
-  background: #2f2f2f;
+  background: #074b60;
   bottom: 15px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -323,7 +323,7 @@ a.more {
   right: 0;
   position: absolute;
   content: "";
-  background: #dce5e4;
+  background: #c9d7dc;
   height: 0%;
   z-index: -1;
   border-radius: 10px;
