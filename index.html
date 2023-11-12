@@ -31,7 +31,11 @@
     >
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="images/logo/colorlogowordmark.png" alt="Furni" style="width: 6em" />
+          <img
+            src="images/logo/colorlogowordmark.png"
+            alt="Furni"
+            style="width: 6em"
+          />
         </a>
 
         <button
@@ -98,76 +102,65 @@
       <div class="container">
         <div class="row mb-3">
           <div class="col-md-6">
-            <h2 class="section-title" style="font-weight: 600; color: #000;">Festival di Sumatera Utara</h2>
+            <h2 class="section-title" style="font-weight: 600; color: #000">
+              Festival di Sumatera Utara
+            </h2>
           </div>
           <div class="col-md-6 text-start text-md-end">
-            <a href="fest.html" class="more" style="color:#358097; font-size: 15px;">View All Festival</a>
+            <a
+              href="fest.html"
+              class="more"
+              style="color: #358097; font-size: 15px"
+              >View All Festival</a
+            >
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img
-                  src="images/niasfestival.jpg"
-                  alt="Image"
-                  class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3><a href="#" style="font-size: 25px;">Ya'ahowu Nias Festival</a></h3>
-                <div class="meta">
-                  <span><a href="#">Nias Utara</a></span>
-                  <span>on <a href="#">16 -20 November 2024</a></span>
-                </div>
-                <div class="meta">
-                  <span><a href="booking.html" class="btn btn-primary me-2" style="margin-top: 10px;">Booking Now!</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img
-                  src="images/festivaldanautoba.png"
-                  alt="Image"
-                  class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3><a href="#" style="font-size: 25px;">Festival Danau Toba</a></h3>
-                <div class="meta">
-                  <span><a href="#">Balige-Toba Samosir</a></span>
-                  <span>on <a href="#">03 – 05 Juli 2024</a></span>
-                </div>
-                <div class="meta">
-                  <span><a href="booking.html" class="btn btn-primary me-2" style="margin-top: 10px;">Booking Now!</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img
-                  src="images/pekanrayasumumt.jpg"
-                  alt="Image"
-                  class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3><a href="#" style="font-size: 25px;">Pekan Raya Sumatera Utara</a></h3>
-                <div class="meta">
-                  <span><a href="#">Kota Medan, Sumatera Utara</a></span>
-                  <span>on <a href="#">16 Juni - 17 Juli 2024</a></span>
-                </div>
-                <div class="meta">
-                  <span><a href="booking.html" class="btn btn-primary me-2" style="margin-top: 10px;">Booking Now!</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="row" id="festView">
+          <script>
+            // Select the HTML element where you want to display the data
+            const festContainer = document.getElementById("festView");
+            // Map the data from the response rows
+            fetch("http://localhost:8000/festival")
+              .then((response) => response.json())
+              .then((data) => {
+                // Map the data from the response rows
+                const festElement = data.rows.map((fest) => {
+                  return `
+                    <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                      <div class="post-entry">
+                        <a href="fest_view.html?id=${fest.id}" class="post-thumbnail"
+                          ><img
+                            src="images/${fest.foto}"
+                            alt="Image"
+                            class="img-fluid"
+                        /></a>
+                        <div class="post-content-entry">
+                          <h3>
+                            <a href="#" style="font-size: 25px">${fest.nama}</a>
+                          </h3>
+                          <div class="meta">
+                            <span><a href="#">${fest.lokasi}</a></span>
+                            <span>on <a href="#">${fest.jadwal}</a></span>
+                          </div>
+                          <div class="meta">
+                            <span
+                              ><a
+                                href="booking.html"
+                                class="btn btn-primary me-2"
+                                style="margin-top: 10px"
+                                >Booking Now!</a
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    `;
+                });
+                festContainer.innerHTML = festElement.join("");
+              });
+          </script>
         </div>
       </div>
     </div>
@@ -178,78 +171,65 @@
       <div class="container">
         <div class="row mb-3">
           <div class="col-md-6">
-            <h2 class="section-title" style="font-weight: 600; color: #000;">Pameran di Sumatera Utara</h2>
+            <h2 class="section-title" style="font-weight: 600; color: #000">
+              Pameran di Sumatera Utara
+            </h2>
           </div>
           <div class="col-md-6 text-start text-md-end">
-            <a href="pameran.html" class="more" style="color:#358097; font-size: 15px;">View All Pameran</a>
+            <a
+              href="pameran.html"
+              class="more"
+              style="color: #358097; font-size: 15px"
+              >View All Pameran</a
+            >
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img
-                  src="images/melauserumpun.jpeg"
-                  alt="Image"
-                  class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3>
-                  <a href="#" style="font-size: 25px;">Gelar Melayu Serumpun</a>
-                </h3>
-                <div class="meta">
-                  <span><a href="#">Kota Medan, Sumatera Utara</a></span>
-                  <span>on <a href="#">06 – 08 November 2024</a></span>
-                </div>
-                <div class="meta">
-                  <span><a href="booking.html" class="btn btn-primary me-2" style="margin-top: 10px;">Booking Now!</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img
-                  src="images/samosirmusic.jpg"
-                  alt="Image"
-                  class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3><a href="#" style="font-size: 25px;">Samosir Music Internasional</a></h3>
-                <div class="meta">
-                  <span><a href="#">Siadong Kec. Simanindo</a></span>
-                  <span>on <a href="#">07 -08 Agustus 2024</a></span>
-                </div>
-                <div class="meta">
-                  <span><a href="booking.html" class="btn btn-primary me-2" style="margin-top: 10px;">Booking Now!</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
-            <div class="post-entry">
-              <a href="#" class="post-thumbnail"
-                ><img
-                  src="images/pamerandjki.jpg"
-                  alt="Image"
-                  class="img-fluid"
-              /></a>
-              <div class="post-content-entry">
-                <h3><a href="#" style="font-size: 25px;">Pameran Merek DJKI</a></h3>
-                <div class="meta">
-                  <span><a href="#">Medan, Sumatera Utara</a></span>
-                  <span>on <a href="#">23 - 25 Oktober 2024</a></span>
-                </div>
-                <div class="meta">
-                  <span><a href="booking.html" class="btn btn-primary me-2" style="margin-top: 10px;">Booking Now!</a></span>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="row" id="pamView">
+          <script>
+            // Select the HTML element where you want to display the data
+            const pamContainer = document.getElementById("pamView");
+            // Map the data from the response rows
+            fetch("http://localhost:8000/pameran")
+              .then((response) => response.json())
+              .then((data) => {
+                // Map the data from the response rows
+                const pamElement = data.data.map((pam) => {
+                  return `
+                    <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                      <div class="post-entry">
+                        <a href="pameran_view.html?id=${pam.id}" class="post-thumbnail"
+                          ><img
+                            src="images/${pam.foto}"
+                            alt="Image"
+                            class="img-fluid"
+                        /></a>
+                        <div class="post-content-entry">
+                          <h3>
+                            <a href="#" style="font-size: 25px">${pam.nama}</a>
+                          </h3>
+                          <div class="meta">
+                            <span><a href="#">${pam.lokasi}</a></span>
+                            <span>on <a href="#">${pam.jadwal}</a></span>
+                          </div>
+                          <div class="meta">
+                            <span
+                              ><a
+                                href="booking.html"
+                                class="btn btn-primary me-2"
+                                style="margin-top: 10px"
+                                >Booking Now!</a
+                              ></span
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    `;
+                });
+                pamContainer.innerHTML = pamElement.join("");
+              });
+          </script>
         </div>
       </div>
     </div>

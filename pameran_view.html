@@ -1,85 +1,125 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="images/logo/logomaskotberwarna.png">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="author" content="Untree.co" />
+    <link rel="shortcut icon" href="images/logo/logomaskotberwarna.png" />
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="bootstrap, bootstrap4" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="bootstrap, bootstrap4" />
 
-		<link href="css/bootstrap.min.css" rel="stylesheet">
-		<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
-		<link href="css/tiny-slider.css" rel="stylesheet">
-		<link href="css/style.css" rel="stylesheet">
-		<title>SmutOur Sumatera Utara Tour</title>
-	</head>
+    <link href="css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="css/tiny-slider.css" rel="stylesheet" />
+    <link href="css/style.css" rel="stylesheet" />
+    <title>SmutOur Sumatera Utara Tour</title>
+  </head>
 
-	<body>
+  <body>
+    <!-- Start Header/Navigation -->
+    <nav
+      class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark"
+      arial-label="Furni navigation bar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <img
+            src="images/logo/colorlogowordmark.png"
+            alt="Furni"
+            style="width: 6em"
+          />
+        </a>
 
-		<!-- Start Header/Navigation -->
-		<nav class="custom-navbar navbar navbar navbar-expand-md navbar-dark bg-dark" arial-label="Furni navigation bar">
-			<div class="container">
-				<a class="navbar-brand" href="index.html">
-					<img src="images/logo/colorlogowordmark.png" alt="Furni" style="width: 6em;">
-				</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarsFurni"
+          aria-controls="navbarsFurni"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
 
-				<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsFurni" aria-controls="navbarsFurni" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				</button>
+        <div class="collapse navbar-collapse" id="navbarsFurni">
+          <ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li><a class="nav-link" href="team.html">Our Team</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- End Header/Navigation -->
 
-				<div class="collapse navbar-collapse" id="navbarsFurni">
-					<ul class="custom-navbar-nav navbar-nav ms-auto mb-2 mb-md-0">
-						<li class="nav-item">
-							<a class="nav-link" href="index.html">Home</a>
-						</li>
-						<li><a class="nav-link" href="team.html">Our Team</a></li>
-					</ul>
-				</div>
-			</div>
-				
-		</nav>
-		<!-- End Header/Navigation -->
+    <!-- Start Hero Section -->
+    <div id="pamDetail">
+      <script>
+        // Select the HTML element where you want to display the data
+        const pamContainer = document.getElementById("pamDetail");
 
-		<!-- Start Hero Section -->
-			<div class="product-section">
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<div class="intro-excerpt" style="color: #358097;">
-								<h3 style="font-weight: 600;">Pameran Sumatera Utara</h3>
-								<h1 style="font-weight: 900;"><span clsas="d-block">Gelar Melayu Serumpun (GEMES) Kota Medan</span></h1>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row">
-						<div class="col-lg-12">
-							<center>
-								<div class="hero-img-wrap">
-									<img src="images/melauserumpun.jpeg" class="img-fluid" style="margin: 10px auto; border-radius: 10px;">
-								</div>
-							</center>
-						</div>
-					</div>
-				</div>
-				<div class="container">
-					<div class="row justify-content-between">
-						<div class="col-lg-12">
-							<div class="intro-excerpt">
-								<p class="mb-4">Gelar Melayu Serumpun (GEMES) Kota Medan merupakan kegiatan yang mempertemukan Seni Budaya Etnis Melayu yang serumpun yang berasal dari berbagai negara Asia Tenggara dan Nusantara. Tujuannya mendorong pengembangan industri kepariwisataan di Kota Medan melalui kegiatan/event budaya tersebut, sehingga adanya event tersebut menjadi  salah satu daya tarik wisata untuk berkunjung ke Kota medan.</p>
-								<p class="mb-4">Jadwal Kegiatan : 06 – 08 November 2024</p>
-								<p><a href="" class="btn btn-primary me-2">Booking</a><a href="https://maps.app.goo.gl/ENVsBSKadTcE4tcv7" style="color: #358097;" class="btn btn-outline">Lokasi</a></p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		<!-- End Hero Section -->
+        // Extract the id parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
 
-		<!-- Start Footer Section -->
+        // Fetch the data for the specified id
+        fetch(`http://localhost:8000/pameran/${id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Map the data from the response rows
+            const pam = data;
+            const pamElement = `
+                <div class="product-section">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <div class="intro-excerpt" style="color: #358097;">
+                          <h3 style="font-weight: 600;">Festival Sumatera Utara</h3>
+                          <h1 style="font-weight: 900;"><span clsas="d-block">${pam.data.nama}</span></h1>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-lg-12">
+                        <center>
+                          <div class="hero-img-wrap">
+                            <img src="images/${pam.data.foto}" class="img-fluid" style="margin: 10px auto; border-radius: 10px;">
+                          </div>
+                        </center>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="container">
+                    <div class="row justify-content-between">
+                      <div class="col-lg-12">
+                        <div class="intro-excerpt">
+                          <p class="mb-4">${pam.data.deskripsi}</p>
+                          <p class="mb-4">Jadwal Kegiatan : ${pam.data.jadwal}</p>
+                          <p><a href="" class="btn btn-primary me-2">Booking</a><a href="${pam.data.gmaps}" style="color: #358097;" class="btn btn-outline" target="_blank">Lokasi</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              `;
+            pamContainer.innerHTML = pamElement;
+          });
+      </script>
+    </div>
+    <!-- End Hero Section -->
+
+    <!-- Start Footer Section -->
     <footer class="footer-section">
       <div class="container relative">
         <!-- <div class="sofa-img">
@@ -218,10 +258,8 @@
     </footer>
     <!-- End Footer Section -->
 
-		
-		<script src="js/bootstrap.bundle.min.js"></script>
-		<script src="js/tiny-slider.js"></script>
-		<script src="js/custom.js"></script>
-	</body>
-
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/tiny-slider.js"></script>
+    <script src="js/custom.js"></script>
+  </body>
 </html>

@@ -31,7 +31,11 @@
     >
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="images/logo/colorlogowordmark.png" alt="Furni" style="width: 6em" />
+          <img
+            src="images/logo/colorlogowordmark.png"
+            alt="Furni"
+            style="width: 6em"
+          />
         </a>
 
         <button
@@ -75,73 +79,36 @@
 
     <div class="untree_co-section product-section before-footer-section">
       <div class="container">
-        <div class="row">
-          <!-- Start Column 1 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5">
-            <a class="product-item" href="pameran_view.html">
-              <img
-                src="images/melauserumpun.jpeg"
-                class="img-fluid product-thumbnail"
-              />
-              <h3 class="product-title">
-                Gelar Melayu Serumpun (GEMES) Kota Medan
-              </h3>
-              <strong class="product-price">Kota Medan</strong>
+        <div class="row" id="pamView">
+          <script>
+            // Select the HTML element where you want to display the data
+            const pamContainer = document.getElementById("pamView");
+            // Map the data from the response rows
+            fetch("http://localhost:8000/pameran")
+              .then((response) => response.json())
+              .then((data) => {
+                // Map the data from the response rows
+                const pamElement = data.data.map((pam) => {
+                  return `
+                  <div class="col-12 col-md-4 col-lg-3 mb-5">
+                    <a class="product-item" href="pameran_view.html?id=${pam.id}">
+                      <img
+                        src="images/${pam.foto}"
+                        class="img-fluid product-thumbnail"
+                      />
+                      <strong class="product-title">${pam.nama}</strong>
+                      <h3 class="product-price">${pam.lokasi}</h3>
 
-              <span class="icon-cross">
-                <img src="images/next.png" class="img-fluid" />
-              </span>
-            </a>
-          </div>
-          <!-- End Column 1 -->
-
-          <!-- Start Column 2 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5">
-            <a class="product-item" href="fest_view.html">
-              <img
-                src="images/samosirmusic.jpg"
-                class="img-fluid product-thumbnail"
-              />
-              <h3 class="product-title">Samosir Music Internasional</h3>
-              <strong class="product-price">Siadong Kec. Simanindo</strong>
-
-              <span class="icon-cross">
-                <img src="images/next.png" class="img-fluid" />
-              </span>
-            </a>
-          </div>
-          <!-- End Column 2 -->
-
-          <!-- Start Column 3 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5">
-            <a class="product-item" href="#">
-              <img
-                src="images/pamerandjki.jpg"
-                class="img-fluid product-thumbnail"
-              />
-              <h3 class="product-title">Pameran Merek DJKI</h3>
-              <strong class="product-price">Medan</strong>
-
-              <span class="icon-cross">
-                <img src="images/next.png" class="img-fluid" />
-              </span>
-            </a>
-          </div>
-          <!-- End Column 3 -->
-          <div class="col-12 col-md-4 col-lg-3 mb-5">
-            <a class="product-item" href="#">
-              <img
-                src="images/pekanrayasumumt.jpg"
-                class="img-fluid product-thumbnail"
-              />
-              <h3 class="product-title">Pekan Raya Sumatera Utara (PRSU)</h3>
-              <strong class="product-price">Kota Medan</strong>
-
-              <span class="icon-cross">
-                <img src="images/next.png" class="img-fluid" />
-              </span>
-            </a>
-          </div>
+                      <span class="icon-cross">
+                        <img src="images/next.png" class="img-fluid" />
+                      </span>
+                    </a>
+                  </div>
+                    `;
+                });
+                pamContainer.innerHTML = pamElement.join("");
+              });
+          </script>
         </div>
       </div>
     </div>
@@ -152,44 +119,6 @@
         <div class="sofa-img">
           <img src="images/sofa.png" alt="Image" class="img-fluid" />
         </div>
-
-        <!-- <div class="row">
-          <div class="col-lg-8">
-            <div class="subscription-form">
-              <h3 class="d-flex align-items-center">
-                <span class="me-1"
-                  ><img
-                    src="images/envelope-outline.svg"
-                    alt="Image"
-                    class="img-fluid" /></span
-                ><span>Subscribe to Newsletter</span>
-              </h3>
-
-              <form action="#" class="row g-3">
-                <div class="col-auto">
-                  <input
-                    type="text"
-                    class="form-control"
-                    placeholder="Enter your name"
-                  />
-                </div>
-                <div class="col-auto">
-                  <input
-                    type="email"
-                    class="form-control"
-                    placeholder="Enter your email"
-                  />
-                </div>
-                <div class="col-auto">
-                  <button class="btn btn-primary">
-                    <span class="fa fa-paper-plane"></span>
-                  </button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div> -->
-
         <div class="row g-5 mb-5">
           <div class="col-lg-4">
             <div class="mb-4 footer-logo-wrap">
@@ -214,40 +143,11 @@
               <li>
                 <a href="#"><span class="fa fa-brands fa-instagram"></span></a>
               </li>
-              <!-- <li>
-                <a href="#"><span class="fa fa-brands fa-linkedin"></span></a>
-              </li> -->
             </ul>
           </div>
 
           <div class="col-lg-8">
             <div class="row links-wrap linkOnfooter">
-              <!-- <div class="col-6 col-sm-6 col-md-3">
-                <ul class="list-unstyled">
-                  <li><a href="#">About us</a></li>
-                  <li><a href="#">Services</a></li>
-                  <li><a href="#">Blog</a></li>
-                  <li><a href="#">Contact us</a></li>
-                </ul>
-              </div>
-
-              <div class="col-6 col-sm-6 col-md-3">
-                <ul class="list-unstyled">
-                  <li><a href="#">Support</a></li>
-                  <li><a href="#">Knowledge base</a></li>
-                  <li><a href="#">Live chat</a></li>
-                </ul>
-              </div>
-
-              <div class="col-6 col-sm-6 col-md-3">
-                <ul class="list-unstyled">
-                  <li><a href="#">Jobs</a></li>
-                  <li><a href="#">Our team</a></li>
-                  <li><a href="#">Leadership</a></li>
-                  <li><a href="#">Privacy Policy</a></li>
-                </ul>
-              </div> -->
-
               <div class="col-6 col-sm-6 col-md-3">
                 <ul class="list-unstyled">
                   <li><a href="team.html">Our Team</a></li>
@@ -272,13 +172,6 @@
                 <!-- License information: https://untree.co/license/ -->
               </p>
             </div>
-
-            <!-- <div class="col-lg-6 text-center text-lg-end">
-              <ul class="list-unstyled d-inline-flex ms-auto">
-                <li class="me-4"><a href="#">Terms &amp; Conditions</a></li>
-                <li><a href="#">Privacy Policy</a></li>
-              </ul>
-            </div> -->
           </div>
         </div>
       </div>
