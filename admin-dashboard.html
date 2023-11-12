@@ -59,37 +59,39 @@
     <!-- End Header/Navigation -->
 
     <!-- Start Hero Section -->
-    <div class="box">
-      <div class="square">
-        <div class="square-icon1">
-          <div class="icon">
-            <i class="fas fa-ticket"></i>
+    <div class="boxhero">
+      <div class="box">
+        <div class="square">
+          <div class="square-icon1">
+            <div class="icon">
+              <i class="fas fa-ticket"></i>
+            </div>
           </div>
+          <p class="info">Jumlah Booking</p>
+          <p class="count">4</p>
         </div>
-        <p class="info">Jumlah Booking</p>
-        <p class="count">4</p>
       </div>
-    </div>
-    <div class="box">
-      <div class="square">
-        <div class="square-icon2">
-          <div class="icon">
-            <i class="fas fa-city fa-sm"></i>
+      <div class="box">
+        <div class="square">
+          <div class="square-icon2">
+            <div class="icon">
+              <i class="fas fa-city fa-sm"></i>
+            </div>
           </div>
+          <p class="info">Jumlah Festival</p>
+          <p class="count">2</p>
         </div>
-        <p class="info">Jumlah Festival</p>
-        <p class="count">2</p>
       </div>
-    </div>
-    <div class="box">
-      <div class="square">
-        <div class="square-icon3">
-          <div class="icon">
-            <i class="fas fa-landmark"></i>
+      <div class="box">
+        <div class="square">
+          <div class="square-icon3">
+            <div class="icon">
+              <i class="fas fa-landmark"></i>
+            </div>
           </div>
+          <p class="info">Jumlah Pameran</p>
+          <p class="count">2</p>
         </div>
-        <p class="info">Jumlah Pameran</p>
-        <p class="count">2</p>
       </div>
     </div>
 
@@ -123,13 +125,24 @@
                         <th class="th-action">ACTION</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <td class="text-bold-500">Syifa Awaliyah Maqdis</td>
-                        <td class="text-td">083129663548</td>
-                        <td class="text-td">15</td>
-                        <td class="text-td">Sabtu, 30 Desember 2023</td>
-                        <td class="text-td">Samosir Music Festival</td>
+                    <tbody id="bookingoutput">
+                      <script>
+                        // Select the HTML element where you want to display the data
+                        const bookingContainer =
+                          document.getElementById("bookingoutput");
+                        // Map the data from the response rows
+                        fetch("http://localhost:8000/booked")
+                          .then((response) => response.json())
+                          .then((data) => {
+                            // Map the data from the response rows
+                            const bookedElements = data.data.map((booked) => {
+                              return `
+                                <tr>
+                        <td class="text-bold-500">${booked.nama}</td>
+                        <td class="text-td">${booked.nohp}</td>
+                        <td class="text-td">${booked.jumlahorang}</td>
+                        <td class="text-td">${booked.jadwal}</td>
+                        <td class="text-td">${booked.kegiatan}</td>
                         <td>
                           <button class="icon-button">
                             <i
@@ -146,116 +159,14 @@
                           </button>
                         </td>
                       </tr>
-                      <tr>
-                        <td class="text-bold-500">
-                          Abdi "Lemon" Surya Perdana
-                        </td>
-                        <td class="text-td">082285413093</td>
-                        <td class="text-td">2</td>
-                        <td class="text-td">Senin, 6 November 2023</td>
-                        <td class="text-td">Festival Danau Toba</td>
-                        <td>
-                          <button class="icon-button">
-                            <i
-                              class="fa-solid fa-pen-to-square fa-xl"
-                              style="color: #399155"
-                            ></i>
-                          </button>
-
-                          <button class="icon-button">
-                            <i
-                              class="fa-solid fa-trash-can fa-bounce fa-xl"
-                              style="color: #8c0e0f"
-                            ></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-bold-500">Rfqi "Hasbullah" Alamsyah</td>
-                        <td class="text-td">083502332019</td>
-                        <td class="text-td">1</td>
-                        <td class="text-td">Rabu, 8 November 2023</td>
-                        <td class="text-td">
-                          Gelar Melayu Serumpun (GEMES) Kota Medan
-                        </td>
-                        <td>
-                          <button class="icon-button">
-                            <i
-                              class="fa-solid fa-pen-to-square fa-xl"
-                              style="color: #399155"
-                            ></i>
-                          </button>
-
-                          <button class="icon-button">
-                            <i
-                              class="fa-solid fa-trash-can fa-bounce fa-xl"
-                              style="color: #8c0e0f"
-                            ></i>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td class="text-bold-500">Dastin "Gacor" Aryo</td>
-                        <td class="text-td">081285479963</td>
-                        <td class="text-td">2</td>
-                        <td class="text-td">Kamis, 9 November 2023</td>
-                        <td class="text-td">Festival Danau Toba</td>
-                        <td>
-                          <button class="icon-button">
-                            <i
-                              class="fa-solid fa-pen-to-square fa-xl"
-                              style="color: #399155"
-                            ></i>
-                          </button>
-
-                          <button class="icon-button">
-                            <i
-                              class="fa-solid fa-trash-can fa-bounce fa-xl"
-                              style="color: #8c0e0f"
-                            ></i>
-                          </button>
-                        </td>
-                      </tr>
+                                `;
+                            });
+                            bookingContainer.innerHTML =
+                              bookedElements.join("");
+                          });
+                      </script>
                     </tbody>
                   </table>
-
-                  <!-- Code To Get API -->
-                  <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                      // Fetch data from the API
-                      fetch("http://localhost:8000/booked")
-                        .then((response) => response.json())
-                        .then((data) => {
-                          // Populate the table with data
-                          const bookingTable =
-                            document.getElementById("data-table");
-                          const tbody = bookingTable.querySelector("tbody");
-
-                          data.forEach((item) => {
-                            const row = document.createElement("tr");
-                            row.innerHTML = `
-															<td class="text-bold-500">${item.nama}</td>
-															<td class="text-td">${item.nomor_handphone}</td>
-															<td class="text-td">${item.jumlah_orang}</td>
-															<td class="text-td">${item.hari_tgl}</td>
-															<td class="text-td">${item.kegiatan}</td>
-															<td>
-																<button class="icon-button">
-																	<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
-																</button>
-																<button class="icon-button">
-																	<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
-																</button>
-															</td>
-														`;
-                            tbody.appendChild(row);
-                          });
-                        })
-                        .catch((error) =>
-                          console.error("Error fetching data:", error)
-                        );
-                    });
-                  </script>
                 </div>
               </div>
             </div>
@@ -345,45 +256,6 @@
                       </script>
                     </tbody>
                   </table>
-
-                  <!-- Code to Get API -->
-                  <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                      // Fetch data from the API
-                      fetch("http://localhost:8000/festival")
-                        .then((response) => response.json())
-                        .then((data) => {
-                          // Populate the table with data
-                          const festivalTable =
-                            document.getElementById("festival-table");
-                          const tbody = festivalTable.querySelector("tbody");
-
-                          data.forEach((item) => {
-                            const row = document.createElement("tr");
-                            row.innerHTML = `
-																<td class="text-bold-500">${item.nama}</td>
-																<td class="text-td">${item.foto}</td>
-																<td>${item.deskripsi}</td>
-																<td class="text-td">${item.jadwal}</td>
-																<td class="text-td">${item.lokasi}</td>
-																<td class="text-td">${item.gmaps}</td>
-																<td>
-																	<button class="icon-button">
-																		<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
-																	</button>
-																	<button class="icon-button">
-																		<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
-																	</button>
-																</td>
-															`;
-                            tbody.appendChild(row);
-                          });
-                        })
-                        .catch((error) =>
-                          console.error("Error fetching data:", error)
-                        );
-                    });
-                  </script>
                 </div>
               </div>
             </div>
@@ -395,9 +267,9 @@
     <!-- End List of Festival -->
 
     <!-- List of Pameran -->
-    <div class="table-booking">
+    <div class="table-booking mb-4">
       <div class="container-list">
-        <div class="title-list">Content of Festival</div>
+        <div class="title-list">Content of Pameran</div>
         <div class="button-container">
           <button class="custom-btn btn-12">
             <span>Click!</span><span>Tambah Pameran</span>
@@ -417,7 +289,7 @@
                     <thead>
                       <tr class="tr-thead">
                         <th class="th-namafestival">NAMA KEGIATAN</th>
-                        <th class="th-fotofestival">FOTO</th>
+                        <!-- <th class="th-fotofestival">FOTO</th> -->
                         <th class="th-deskfestival">DESKRIPSI</th>
                         <th class="th-jadwalfestival">JADWAL</th>
                         <th class="th-lokasifestival">LOKASI</th>
@@ -425,22 +297,29 @@
                         <th class="th-actionfestival">ACTION</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
+                    <tbody id="pameranOutput">
+                      <script>
+                        // Select the HTML element where you want to display the data
+                        const pameranContainer =
+                          document.getElementById("pameranOutput");
+                        // Map the data from the response rows
+                        fetch("http://localhost:8000/pameran")
+                          .then((response) => response.json())
+                          .then((data) => {
+                            // Map the data from the response rows
+                            const pameranElement = data.data.map((booked) => {
+                              return `
+                              <tr>
                         <td class="text-bold-500">
-                          Gelar Melayu Serumpun (GEMES) Kota Medan
+                          ${booked.nama}
                         </td>
-                        <td class="text-td">Gemas.png</td>
                         <td>
-                          Gelar Melayu Serumpun (GEMES) Kota Medan merupakan
-                          kegiatan yang mempertemukan Seni Budaya Etnis Melayu
-                          yang serumpun yang berasal dari berbagai negara Asia
-                          Tenggara dan Nusantara.
+                          ${booked.deskripsi}
                         </td>
-                        <td class="text-td">6 - 8 November 2023</td>
-                        <td class="text-td">Kota Medan</td>
+                        <td class="text-td">${booked.jadwal}</td>
+                        <td class="text-td">${booked.lokasi}</td>
                         <td class="text-td">
-                          https://maps.app.goo.gl/4KZtWPsQoMF1WuP56
+                          ${booked.gmaps}
                         </td>
                         <td>
                           <button class="icon-button">
@@ -458,79 +337,14 @@
                           </button>
                         </td>
                       </tr>
-                      <tr>
-                        <td class="text-bold-500">
-                          Samosir Music Internasional
-                        </td>
-                        <td class="text-td">SamMusic.png</td>
-                        <td>
-                          Samosir Music International (SMI) merupakan rangkaian
-                          dari Horas Samosir Fiesta yang diselenggarakan setiap
-                          Tahun , event ini merupakan salah satu program untuk
-                          meningkatkan nilai wisata dan budaya Samosir.
-                        </td>
-                        <td class="text-td">7 - 8 Agustus 2023</td>
-                        <td class="text-td">Pulau Samosir</td>
-                        <td class="text-td">
-                          https://maps.app.goo.gl/TsRtsPez2a3y6giu8
-                        </td>
-                        <td>
-                          <button class="icon-button">
-                            <i
-                              class="fa-solid fa-pen-to-square fa-xl"
-                              style="color: #399155"
-                            ></i>
-                          </button>
-
-                          <button class="icon-button">
-                            <i
-                              class="fa-solid fa-trash-can fa-bounce fa-xl"
-                              style="color: #8c0e0f"
-                            ></i>
-                          </button>
-                        </td>
-                      </tr>
+                                `;
+                            });
+                            pameranContainer.innerHTML =
+                              pameranElement.join("");
+                          });
+                      </script>
                     </tbody>
                   </table>
-
-                  <!-- Code To Get API -->
-                  <script>
-                    document.addEventListener("DOMContentLoaded", function () {
-                      // Fetch data from the API
-                      fetch("http://localhost:8000/pameran")
-                        .then((response) => response.json())
-                        .then((data) => {
-                          // Populate the table with data
-                          const festivalTable =
-                            document.getElementById("festival-table");
-                          const tbody = festivalTable.querySelector("tbody");
-
-                          data.forEach((item) => {
-                            const row = document.createElement("tr");
-                            row.innerHTML = `
-																<td class="text-bold-500">${item.nama_kegiatan}</td>
-																<td class="text-td">${item.foto}</td>
-																<td>${item.deskripsi}</td>
-																<td class="text-td">${item.jadwal}</td>
-																<td class="text-td">${item.lokasi}</td>
-																<td class="text-td">${item.gmaps}</td>
-																<td>
-																	<button class="icon-button">
-																		<i class="fa-solid fa-pen-to-square fa-xl" style="color: #399155;"></i>
-																	</button>
-																	<button class="icon-button">
-																		<i class="fa-solid fa-trash-can fa-bounce fa-xl" style="color: #8c0e0f;"></i>
-																	</button>
-																</td>
-															`;
-                            tbody.appendChild(row);
-                          });
-                        })
-                        .catch((error) =>
-                          console.error("Error fetching data:", error)
-                        );
-                    });
-                  </script>
                 </div>
               </div>
             </div>
