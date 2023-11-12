@@ -20,6 +20,7 @@
     />
     <link href="css/tiny-slider.css" rel="stylesheet" />
     <link href="css/styleadmindashboard.css" rel="stylesheet" />
+    <script src="js/forminputbooking.js"></script>
     <title>SmutOur Sumatera Utara Tour</title>
   </head>
 
@@ -100,12 +101,34 @@
       <div class="container-list">
         <div class="title-list">List of Booking</div>
         <div class="button-container">
-          <button class="custom-btn btn-12">
+          <button class="custom-btn btn-12" onclick="openPopupForm()">
             <span>Click!</span><span>Tambah Booking</span>
           </button>
+          <!-- pop up booking -->
+          <div id="popup-form" class="popup-form">
+						<div class="wrapper fadeInDown">
+						<span class="close" onclick="closePopupForm()">&times;</span>
+						<div id="formContent">
+							<!-- Icon -->
+							<div class="fadeIn first">
+								<img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
+							</div>
+							<!-- Tabs Titles -->
+							<h5>Tambah Data Booking</h5>
+						  <!-- Login Form -->
+						  <form>
+							<input type="text" id="nama" class="fadeIn second" name="nama" placeholder="Nama">
+							<input type="text" id="no-hp" class="fadeIn second" name="no-hp" placeholder="No Handphone">
+							<input type="text" id="jumlah-orang" class="fadeIn second" name="jumlah-orang" placeholder="Jumlah Orang">
+							<input type="text" id="hari-tgl" class="fadeIn second" name="hari-tgl" placeholder="Hari/Tanggal">
+							<input type="text" id="kegiatan" class="fadeIn second" name="kegiatan" placeholder="Kegiatan">
+							<input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
+						  </form>
+						</div>
         </div>
       </div>
-      <!-- pop up booking -->
+    </div>
+  </div>
 
       <!-- Bordered table start -->
       <section class="section">

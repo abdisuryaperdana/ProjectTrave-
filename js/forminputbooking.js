@@ -1,12 +1,12 @@
 // form input booking
 function openPopupForm() {
-    document.getElementById('popup-form').style.display = 'flex';
-  }
-  
-  function closePopupForm() {
-    document.getElementById('popup-form').style.display = 'none';
-  }
-  
+  document.getElementById('popup-form').style.display = 'flex';
+}
+
+function closePopupForm() {
+  document.getElementById('popup-form').style.display = 'none';
+}
+
   function submitForm() {
     // Ambil nilai dari inputan
     var nama = document.getElementById('nama').value;
