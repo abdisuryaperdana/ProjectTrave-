@@ -104,29 +104,31 @@
           <button class="custom-btn btn-12" onclick="openPopupForm()">
             <span>Click!</span><span>Tambah Booking</span>
           </button>
-          <!-- pop up booking -->
+          <!-- start pop up booking -->
           <div id="popup-form" class="popup-form">
 						<div class="wrapper fadeInDown">
-						<span class="close" onclick="closePopupForm()">&times;</span>
-						<div id="formContent">
-							<!-- Icon -->
-							<div class="fadeIn first">
-								<img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
-							</div>
-							<!-- Tabs Titles -->
-							<h5>Tambah Data Booking</h5>
-						  <!-- Login Form -->
-						  <form>
-							<input type="text" id="nama" class="fadeIn second" name="nama" placeholder="Nama">
-							<input type="text" id="no-hp" class="fadeIn second" name="no-hp" placeholder="No Handphone">
-							<input type="text" id="jumlah-orang" class="fadeIn second" name="jumlah-orang" placeholder="Jumlah Orang">
-							<input type="text" id="hari-tgl" class="fadeIn second" name="hari-tgl" placeholder="Hari/Tanggal">
-							<input type="text" id="kegiatan" class="fadeIn second" name="kegiatan" placeholder="Kegiatan">
-							<input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
-						  </form>
-						</div>
+						  <span class="close" onclick="closePopupForm()">&times;</span>
+              <div id="formContent">
+                <!-- Icon -->
+                <div class="fadeIn first">
+                  <img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
+                </div>
+                <!-- Tabs Titles -->
+                <h5>Tambah Data Booking</h5>
+                <!-- Login Form -->
+                <form>
+                  <input type="text" id="nama" class="fadeIn second" name="nama" placeholder="Nama">
+                  <input type="text" id="no-hp" class="fadeIn second" name="no-hp" placeholder="No Handphone">
+                  <input type="text" id="jumlah-orang" class="fadeIn second" name="jumlah-orang" placeholder="Jumlah Orang">
+                  <input type="text" id="hari-tgl" class="fadeIn second" name="hari-tgl" placeholder="Hari/Tanggal">
+                  <input type="text" id="jam" class="fadeIn second" name="jam" placeholder="Jam">
+                  <input type="text" id="kegiatan" class="fadeIn second" name="kegiatan" placeholder="Kegiatan">
+                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
+                </form>
+              </div>
             </div>
           </div>
+          <!-- end pop up booking -->
         </div>
       </div>
 
@@ -206,9 +208,33 @@
       <div class="container-list">
         <div class="title-list">Content of Festival</div>
         <div class="button-container">
-          <button class="custom-btn btn-12">
+          <button class="custom-btn btn-12" onclick="openPopupForm()">
             <span>Click!</span><span>Tambah Festival</span>
           </button>
+          <!-- start pop up festival -->
+          <div id="popup-form" class="popup-form">
+						<div class="wrapper fadeInDown">
+						  <span class="close" onclick="closePopupForm()">&times;</span>
+              <div id="formContent">
+                <!-- Icon -->
+                <div class="fadeIn first">
+                  <img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
+                </div>
+                <!-- Tabs Titles -->
+                <h5>Tambah Kegiatan Festival</h5>
+                <!-- Login Form -->
+                <form>
+                  <input type="text" id="nama" class="fadeIn second" name="nama-kegiatan-festival" placeholder="Nama Kegiatan">
+                  <input type="text" id="no-hp" class="fadeIn second" name="deskripsi-festival" placeholder="Deskripsi">
+                  <input type="text" id="jumlah-orang" class="fadeIn second" name="jadwal-festival" placeholder="Jadwal">
+                  <input type="text" id="hari-tgl" class="fadeIn second" name="lokasi-festival" placeholder="Lokasi">
+                  <input type="text" id="jam" class="fadeIn second" name="gmaps-festival" placeholder="Gmaps">
+                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- end pop up festival -->
         </div>
       </div>
 
@@ -295,9 +321,33 @@
       <div class="container-list">
         <div class="title-list">Content of Pameran</div>
         <div class="button-container">
-          <button class="custom-btn btn-12">
+          <button class="custom-btn btn-12" onclick="openPopupForm()">
             <span>Click!</span><span>Tambah Pameran</span>
           </button>
+          <!-- start pop up festival -->
+          <div id="popup-form" class="popup-form">
+						<div class="wrapper fadeInDown">
+						  <span class="close" onclick="closePopupForm()">&times;</span>
+              <div id="formContent">
+                <!-- Icon -->
+                <div class="fadeIn first">
+                  <img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
+                </div>
+                <!-- Tabs Titles -->
+                <h5>Tambah Kegiatan Pameran</h5>
+                <!-- Login Form -->
+                <form>
+                  <input type="text" id="nama" class="fadeIn second" name="nama-kegiatan-pameran" placeholder="Nama Kegiatan">
+                  <input type="text" id="no-hp" class="fadeIn second" name="deskripsi-pameran" placeholder="Deskripsi">
+                  <input type="text" id="jumlah-orang" class="fadeIn second" name="jadwal-pameran" placeholder="Jadwal">
+                  <input type="text" id="hari-tgl" class="fadeIn second" name="lokasi-pameran" placeholder="Lokasi">
+                  <input type="text" id="jam" class="fadeIn second" name="gmaps-pameran" placeholder="Gmaps">
+                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- end pop up festival -->
         </div>
       </div>
 

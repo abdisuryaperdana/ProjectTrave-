@@ -242,13 +242,12 @@ a.more {
   border-color: #074b60;
 }
 .btn.btn-secondary {
-  color: #2f2f2f;
-  background: #f9bf29;
-  border-color: #f9bf29;
+  background: #358097;
+  border-color: #358097;
 }
 .btn.btn-secondary:hover {
-  background: #f8b810;
-  border-color: #f8b810;
+  background: #024c63;
+  border-color: #024c63;
 }
 .btn.btn-outline {
   background: transparent;
