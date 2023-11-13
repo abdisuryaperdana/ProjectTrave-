@@ -122,16 +122,16 @@ a.more {
 
 .hero {
   background: #358097;
-  padding: calc(4rem - 30px) 0 0rem 0;
+  padding: calc(7rem - 30px) 0 0rem 0;
 }
 @media (min-width: 768px) {
   .hero {
-    padding: calc(4rem - 30px) 0 4rem 0;
+    padding: calc(7rem - 30px) 0 4rem 0;
   }
 }
 @media (min-width: 992px) {
   .hero {
-    padding: calc(8rem - 30px) 0 8rem 0;
+    padding: calc(11rem - 30px) 0 8rem 0;
   }
 }
 .hero .intro-excerpt {
