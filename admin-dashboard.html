@@ -101,13 +101,13 @@
       <div class="container-list">
         <div class="title-list">List of Booking</div>
         <div class="button-container">
-          <button class="custom-btn btn-12" onclick="openPopupForm()">
+          <button class="custom-btn btn-12" onclick="openPopupForm('add-booking')">
             <span>Click!</span><span>Tambah Booking</span>
           </button>
-          <!-- start pop up booking -->
-          <div id="popup-form" class="popup-form">
+          <!-- start pop up add booking -->
+          <div id="popup-form-add-booking" class="popup-form">
 						<div class="wrapper fadeInDown">
-						  <span class="close" onclick="closePopupForm()">&times;</span>
+						  <span class="close" onclick="closePopupForm('add-booking')">&times;</span>
               <div id="formContent">
                 <!-- Icon -->
                 <div class="fadeIn first">
@@ -123,12 +123,12 @@
                   <input type="text" id="hari-tgl" class="fadeIn second" name="hari-tgl" placeholder="Hari/Tanggal">
                   <input type="text" id="jam" class="fadeIn second" name="jam" placeholder="Jam">
                   <input type="text" id="kegiatan" class="fadeIn second" name="kegiatan" placeholder="Kegiatan">
-                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
+                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm('booking')">
                 </form>
               </div>
             </div>
           </div>
-          <!-- end pop up booking -->
+          <!-- end pop up add booking -->
         </div>
       </div>
 
@@ -146,6 +146,7 @@
                         <th class="th-name">NAMA</th>
                         <th class="th-nohp">NOMOR HANDPHONE</th>
                         <th class="th-org">JUMLAH ORANG</th>
+                        <th class="th-jam">JAM</th>
                         <th class="th-tgl">HARI/TGL</th>
                         <th class="th-kegiatan">KEGIATAN</th>
                         <th class="th-action">ACTION</th>
@@ -167,15 +168,42 @@
                         <td class="text-bold-500">${booked.nama}</td>
                         <td class="text-td">${booked.nohp}</td>
                         <td class="text-td">${booked.jumlahorang}</td>
+                        <td class="text-td">${booked.jam}</td>
                         <td class="text-td">${booked.jadwal}</td>
                         <td class="text-td">${booked.kegiatan}</td>
                         <td>
-                          <button class="icon-button">
+                          <button class="icon-button" onclick="openPopupForm('edit-booking')">
                             <i
                               class="fa-solid fa-pen-to-square fa-xl"
                               style="color: #399155"
                             ></i>
                           </button>
+
+                          <!-- start pop up edit booking -->
+                            <div id="popup-form-edit-booking" class="popup-form">
+                              <div class="wrapper fadeInDown">
+                                <span class="close" onclick="closePopupForm('edit-booking')">&times;</span>
+                                <div id="formContent">
+                                  <!-- Icon -->
+                                  <div class="fadeIn first">
+                                    <img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
+                                  </div>
+                                  <!-- Tabs Titles -->
+                                  <h5>Edit Data Booking</h5>
+                                  <!-- Login Form -->
+                                  <form>
+                                    <input type="text" id="nama" class="fadeIn second" name="nama" placeholder="Nama" value="${booked.nama}">
+                                    <input type="text" id="no-hp" class="fadeIn second" name="no-hp" placeholder="No Handphone" value="${booked.nohp}">
+                                    <input type="text" id="jumlah-orang" class="fadeIn second" name="jumlah-orang" placeholder="Jumlah Orang" value="${booked.jumlahorang}">
+                                    <input type="text" id="jam" class="fadeIn second" name="jam" placeholder="Jam" value="${booked.jam}">
+                                    <input type="text" id="hari-tgl" class="fadeIn second" name="hari-tgl" placeholder="Hari/Tanggal" value="${booked.jadwal}">
+                                    <input type="text" id="kegiatan" class="fadeIn second" name="kegiatan" placeholder="Kegiatan" value="${booked.kegiatan}">
+                                    <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm('booking')">
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          <!-- end pop up edit booking -->
 
                           <button class="icon-button">
                             <i
@@ -208,13 +236,13 @@
       <div class="container-list">
         <div class="title-list">Content of Festival</div>
         <div class="button-container">
-          <button class="custom-btn btn-12" onclick="openPopupForm()">
+          <button class="custom-btn btn-12" onclick="openPopupForm('add-festival')">
             <span>Click!</span><span>Tambah Festival</span>
           </button>
           <!-- start pop up festival -->
-          <div id="popup-form" class="popup-form">
+          <div id="popup-form-add-festival" class="popup-form">
 						<div class="wrapper fadeInDown">
-						  <span class="close" onclick="closePopupForm()">&times;</span>
+						  <span class="close" onclick="closePopupForm('add-festival')">&times;</span>
               <div id="formContent">
                 <!-- Icon -->
                 <div class="fadeIn first">
@@ -224,12 +252,12 @@
                 <h5>Tambah Kegiatan Festival</h5>
                 <!-- Login Form -->
                 <form>
-                  <input type="text" id="nama" class="fadeIn second" name="nama-kegiatan-festival" placeholder="Nama Kegiatan">
-                  <input type="text" id="no-hp" class="fadeIn second" name="deskripsi-festival" placeholder="Deskripsi">
-                  <input type="text" id="jumlah-orang" class="fadeIn second" name="jadwal-festival" placeholder="Jadwal">
-                  <input type="text" id="hari-tgl" class="fadeIn second" name="lokasi-festival" placeholder="Lokasi">
-                  <input type="text" id="jam" class="fadeIn second" name="gmaps-festival" placeholder="Gmaps">
-                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
+                  <input type="text" id="nama-kegiatan-festival" class="fadeIn second" name="nama-kegiatan-festival" placeholder="Nama Kegiatan">
+                  <input type="text" id="deskripsi-festival" class="fadeIn second" name="deskripsi-festival" placeholder="Deskripsi">
+                  <input type="text" id="jadwal-festival" class="fadeIn second" name="jadwal-festival" placeholder="Jadwal">
+                  <input type="text" id="lokasi-festival" class="fadeIn second" name="lokasi-festival" placeholder="Lokasi">
+                  <input type="text" id="gmaps-festival" class="fadeIn second" name="gmaps-festival" placeholder="Gmaps">
+                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm('festival')">
                 </form>
               </div>
             </div>
@@ -283,12 +311,37 @@
                           ${festival.gmaps}
                         </td>
                         <td>
-                          <button class="icon-button">
+                          <button class="icon-button" onclick="openPopupForm('edit-festival')">
                             <i
                               class="fa-solid fa-pen-to-square fa-xl"
                               style="color: #399155"
                             ></i>
                           </button>
+
+                          <!-- start pop up edit festival -->
+                            <div id="popup-form-edit-festival" class="popup-form">
+                              <div class="wrapper fadeInDown">
+                                <span class="close" onclick="closePopupForm('edit-festival')">&times;</span>
+                                <div id="formContent">
+                                  <!-- Icon -->
+                                  <div class="fadeIn first">
+                                    <img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
+                                  </div>
+                                  <!-- Tabs Titles -->
+                                  <h5>Edit Data Festival</h5>
+                                  <!-- Login Form -->
+                                  <form>
+                                    <input type="text" id="nama-kegiatan-festival" class="fadeIn second" name="nama-kegiatan-festival" placeholder="Nama Kegiatan" value="${festival.nama}">
+                                    <input type="text" id="deskripsi-festival" class="fadeIn second" name="deskripsi-festival" placeholder="Deskripsi" value="${festival.deskripsi}">
+                                    <input type="text" id="jadwal-festival" class="fadeIn second" name="jadwal-festival" placeholder="Jadwal" value="${festival.jadwal}">
+                                    <input type="text" id="lokasi-festival" class="fadeIn second" name="lokasi-festival" placeholder="Lokasi" value="${festival.lokasi}">
+                                    <input type="text" id="gmaps-festival" class="fadeIn second" name="gmaps-festival" placeholder="Gmaps" value="${festival.gmaps}">
+                                    <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm('festival')">
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          <!-- end pop up edit festival -->
 
                           <button class="icon-button">
                             <i
@@ -321,13 +374,13 @@
       <div class="container-list">
         <div class="title-list">Content of Pameran</div>
         <div class="button-container">
-          <button class="custom-btn btn-12" onclick="openPopupForm()">
+          <button class="custom-btn btn-12" onclick="openPopupForm('add-pameran')">
             <span>Click!</span><span>Tambah Pameran</span>
           </button>
           <!-- start pop up festival -->
-          <div id="popup-form" class="popup-form">
+          <div id="popup-form-add-pameran" class="popup-form">
 						<div class="wrapper fadeInDown">
-						  <span class="close" onclick="closePopupForm()">&times;</span>
+						  <span class="close" onclick="closePopupForm('add-pameran')">&times;</span>
               <div id="formContent">
                 <!-- Icon -->
                 <div class="fadeIn first">
@@ -342,7 +395,7 @@
                   <input type="text" id="jumlah-orang" class="fadeIn second" name="jadwal-pameran" placeholder="Jadwal">
                   <input type="text" id="hari-tgl" class="fadeIn second" name="lokasi-pameran" placeholder="Lokasi">
                   <input type="text" id="jam" class="fadeIn second" name="gmaps-pameran" placeholder="Gmaps">
-                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm()">
+                  <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm('pameran')">
                 </form>
               </div>
             </div>
@@ -381,27 +434,52 @@
                           .then((response) => response.json())
                           .then((data) => {
                             // Map the data from the response rows
-                            const pameranElement = data.data.map((booked) => {
+                            const pameranElement = data.data.map((pameran) => {
                               return `
                               <tr>
                         <td class="text-bold-500">
-                          ${booked.nama}
+                          ${pameran.nama}
                         </td>
                         <td>
-                          ${booked.deskripsi}
+                          ${pameran.deskripsi}
                         </td>
-                        <td class="text-td">${booked.jadwal}</td>
-                        <td class="text-td">${booked.lokasi}</td>
+                        <td class="text-td">${pameran.jadwal}</td>
+                        <td class="text-td">${pameran.lokasi}</td>
                         <td class="text-td">
-                          ${booked.gmaps}
+                          ${pameran.gmaps}
                         </td>
                         <td>
-                          <button class="icon-button">
+                          <button class="icon-button" onclick="openPopupForm('edit-pameran')">
                             <i
                               class="fa-solid fa-pen-to-square fa-xl"
                               style="color: #399155"
                             ></i>
                           </button>
+
+                          <!-- start pop up edit pameran -->
+                            <div id="popup-form-edit-pameran" class="popup-form">
+                              <div class="wrapper fadeInDown">
+                                <span class="close" onclick="closePopupForm('edit-pameran')">&times;</span>
+                                <div id="formContent">
+                                  <!-- Icon -->
+                                  <div class="fadeIn first">
+                                    <img src="./images/logo/logowordmark.png" id="icon" alt="User Icon" />
+                                  </div>
+                                  <!-- Tabs Titles -->
+                                  <h5>Edit Data Pameran</h5>
+                                  <!-- Login Form -->
+                                  <form>
+                                    <input type="text" id="nama-kegiatan-pameran" class="fadeIn second" name="nama-kegiatan-pameran" placeholder="Nama Kegiatan" value="${pameran.nama}">
+                                    <input type="text" id="deskripsi-pameran" class="fadeIn second" name="deskripsi-pameran" placeholder="Deskripsi" value="${pameran.deskripsi}">
+                                    <input type="text" id="jadwal-pameran" class="fadeIn second" name="jadwal-pameran" placeholder="Jadwal" value="${pameran.jadwal}">
+                                    <input type="text" id="lokasi-pameran" class="fadeIn second" name="lokasi-pameran" placeholder="Lokasi" value="${pameran.lokasi}">
+                                    <input type="text" id="gmaps-pameran" class="fadeIn second" name="gmaps-pameran" placeholder="Gmaps" value="${pameran.gmaps}">
+                                    <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm(pameran)">
+                                  </form>
+                                </div>
+                              </div>
+                            </div>
+                          <!-- end pop up edit pameran -->
 
                           <button class="icon-button">
                             <i

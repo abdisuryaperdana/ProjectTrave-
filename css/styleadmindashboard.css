@@ -255,6 +255,10 @@ th {
   width: 130px;
 }
 
+.th-jam {
+  width: 50px;
+}
+
 .th-tgl {
   width: 170px;
 }
