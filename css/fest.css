@@ -872,3 +872,11 @@ textarea {
   display: flex;
   justify-content: right;
 }
+
+.sizetitle{
+  width: 280px;
+  height: 51px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
