@@ -1010,7 +1010,7 @@ a {
 }
 .footer-section a {
   text-decoration: none;
-  color: #2f2f2f;
+  color: #358097;
   -webkit-transition: 0.3s all ease;
   -o-transition: 0.3s all ease;
   transition: 0.3s all ease;
@@ -1033,7 +1033,7 @@ a {
 .footer-section .subscription-form h3 {
   font-size: 18px;
   font-weight: 500;
-  color: #3b5d50;
+  color: #358097;
 }
 .footer-section .subscription-form .form-control {
   height: 50px;
@@ -1045,7 +1045,7 @@ a {
   outline: none;
   -webkit-box-shadow: none;
   box-shadow: none;
-  border-color: #3b5d50;
+  border-color: #358097;
   -webkit-box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.2);
 }
@@ -1088,7 +1088,7 @@ a {
   font-size: 32px;
   font-weight: 500;
   text-decoration: none;
-  color: #3b5d50;
+  color: #358097;
 }
 .footer-section .custom-social li {
   margin: 2px;
@@ -1101,11 +1101,11 @@ a {
   line-height: 40px;
   display: inline-block;
   background: #dce5e4;
-  color: #3b5d50;
+  color: #358097;
   border-radius: 50%;
 }
 .footer-section .custom-social li a:hover {
-  background: #3b5d50;
+  background: #358097;
   color: #ffffff;
 }
 .footer-section .border-top {
@@ -1130,7 +1130,7 @@ a {
   height: 50px;
   line-height: 50px;
   text-align: center;
-  background: #3b5d50;
+  background: #358097;
   margin-right: 20px;
   color: #ffffff;
 }
@@ -1163,7 +1163,7 @@ textarea {
   color: rgba(0, 0, 0, 0.8);
 }
 .site-blocks-table tbody tr:first-child td {
-  border-top: 1px solid #3b5d50 !important;
+  border-top: 1px solid #358097 !important;
 }
 .site-blocks-table .btn {
   background: none !important;

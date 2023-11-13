@@ -290,11 +290,12 @@ a.more {
 .btn.btn-outline {
   background: transparent;
   border-width: 2px;
-  border-color: #314d43;
+  border-color: #358097;
+  color: #358097;
 }
 .btn.btn-outline:hover {
-  border-color: #314d43;
-  color: #314d43;
+  border-color: #024c63;
+  color: #024c63;
 }
 
 .product-section {
