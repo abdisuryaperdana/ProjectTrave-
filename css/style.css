@@ -579,8 +579,10 @@ textarea {
 
 .sizetitle{
   width: 400px;
-  height: 60px;
-
+  height: 30px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 /* end */
