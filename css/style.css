@@ -570,4 +570,17 @@ textarea {
   justify-content: right;
 }
 
+.imgview {
+  height: 250px;
+  width: 420px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.sizetitle{
+  width: 400px;
+  height: 60px;
+
+}
+
 /* end */

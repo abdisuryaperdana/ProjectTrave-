@@ -127,16 +127,16 @@
                 // Map the data from the response rows
                 const festElement = data.rows.map((fest) => {
                   return `
-                    <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0">
+                    <div class="col-12 col-sm-6 col-md-4 mb-4 mb-md-0 ">
                       <div class="post-entry">
                         <a href="fest_view.html?id=${fest.id}" class="post-thumbnail"
                           ><img
                             src="images/${fest.foto}"
                             alt="Image"
-                            class="img-fluid"
+                            class="img-fluid imgview"
                         /></a>
                         <div class="post-content-entry">
-                          <h3>
+                          <h3 class="sizetitle">
                             <a href="#" style="font-size: 25px">${fest.nama}</a>
                           </h3>
                           <div class="meta">
@@ -147,7 +147,7 @@
                             <span
                               ><a
                                 href="booking.html"
-                                class="btn btn-primary me-2"
+                                class="bookbtn btn btn-primary me-2"
                                 style="margin-top: 10px"
                                 >Booking Now!</a
                               ></span
@@ -202,10 +202,10 @@
                           ><img
                             src="images/${pam.foto}"
                             alt="Image"
-                            class="img-fluid"
+                            class="img-fluid imgview"
                         /></a>
                         <div class="post-content-entry">
-                          <h3>
+                          <h3 class="sizetitle">
                             <a href="#" style="font-size: 25px">${pam.nama}</a>
                           </h3>
                           <div class="meta">
