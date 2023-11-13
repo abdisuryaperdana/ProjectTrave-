@@ -33,6 +33,12 @@ a.more {
   background: #358097 !important;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
+  overflow: hidden;
+  transition: 0.4s; /* Adds a transition effect when the padding is decreased */
+  position: fixed; /* Sticky/fixed navbar */
+  width: 100%;
+  top: 0; /* At the top */
+  z-index: 99; 
 }
 .custom-navbar .navbar-brand {
   font-size: 32px;
