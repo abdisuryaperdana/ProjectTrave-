@@ -69,7 +69,22 @@
             </div>
           </div>
           <p class="info">Jumlah Booking</p>
-          <p class="count">4</p>
+          <p class="count" id="count_booked">
+            <script>
+              const counted_booking = document.getElementById("count_booked");
+              let count_booking = 0;
+
+              fetch("http://localhost:8000/booked")
+                .then((response) => response.json())
+                .then((data_booked) => {
+                  // Map the data from the response rows
+                  const bookedElements = data_booked.data.map((booked) => {
+                    count_booking++;
+                  });
+                  counted_booking.innerHTML = count_booking;
+                });
+            </script>
+          </p>
         </div>
       </div>
       <div class="box">
@@ -80,7 +95,22 @@
             </div>
           </div>
           <p class="info">Jumlah Festival</p>
-          <p class="count">2</p>
+          <p class="count" id="counted_festival">
+            <script>
+              const counted_fest = document.getElementById("counted_festival");
+              let count_fest = 0;
+
+              fetch("http://localhost:8000/festival")
+                .then((response) => response.json())
+                .then((data_festival) => {
+                  // Map the data from the response rows
+                  const Elements = data_festival.rows.map((festival) => {
+                    count_fest++;
+                  });
+                  counted_fest.innerHTML = count_fest;
+                });
+            </script>
+          </p>
         </div>
       </div>
       <div class="box">
@@ -91,7 +121,22 @@
             </div>
           </div>
           <p class="info">Jumlah Pameran</p>
-          <p class="count">2</p>
+          <p class="count" id="counted_pameran">
+            <script>
+              const counted_pameran = document.getElementById("counted_pameran");
+              let count_pameran = 0;
+
+              fetch("http://localhost:8000/pameran")
+                .then((response) => response.json())
+                .then((data_pameran) => {
+                  // Map the data from the response rows
+                  const Elements = data_pameran.data.map((pameran) => {
+                    count_pameran++;
+                  });
+                  counted_pameran.innerHTML = count_pameran;
+                });
+            </script>
+          </p>
         </div>
       </div>
     </div>
@@ -160,9 +205,9 @@
                         // Map the data from the response rows
                         fetch("http://localhost:8000/booked")
                           .then((response) => response.json())
-                          .then((data) => {
+                          .then((data_booked) => {
                             // Map the data from the response rows
-                            const bookedElements = data.data.map((booked) => {
+                            const bookedElements = data_booked.data.map((booked) => {
                               return `
                                 <tr>
                         <td class="text-bold-500">${booked.nama}</td>
@@ -294,9 +339,9 @@
                         // Map the data from the response rows
                         fetch("http://localhost:8000/festival")
                           .then((response) => response.json())
-                          .then((data) => {
+                          .then((data_festival) => {
                             // Map the data from the response rows
-                            const festivalElements = data.rows.map(
+                            const festivalElements = data_festival.rows.map(
                               (festival) => {
                                 return `
                                 <tr>
@@ -432,9 +477,9 @@
                         // Map the data from the response rows
                         fetch("http://localhost:8000/pameran")
                           .then((response) => response.json())
-                          .then((data) => {
+                          .then((data_pameran) => {
                             // Map the data from the response rows
-                            const pameranElement = data.data.map((pameran) => {
+                            const pameranElement = data_pameran.data.map((pameran) => {
                               return `
                               <tr>
                         <td class="text-bold-500">
