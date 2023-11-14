@@ -302,6 +302,8 @@
                   <input type="text" id="jadwal-festival" class="fadeIn second" name="jadwal-festival" placeholder="Jadwal">
                   <input type="text" id="lokasi-festival" class="fadeIn second" name="lokasi-festival" placeholder="Lokasi">
                   <input type="text" id="gmaps-festival" class="fadeIn second" name="gmaps-festival" placeholder="Gmaps">
+                  <label class="fadeIn second sizelabelinput" for="foto-festival">Unggah Foto Wisata</label>
+                  <input type="file" id="foto-festival" class="fadeIn second" name="foto-festival">
                   <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm('festival')">
                 </form>
               </div>
@@ -422,7 +424,7 @@
           <button class="custom-btn btn-12" onclick="openPopupForm('add-pameran')">
             <span>Click!</span><span>Tambah Pameran</span>
           </button>
-          <!-- start pop up festival -->
+          <!-- start pop up pameran -->
           <div id="popup-form-add-pameran" class="popup-form">
 						<div class="wrapper fadeInDown">
 						  <span class="close" onclick="closePopupForm('add-pameran')">&times;</span>
@@ -440,12 +442,14 @@
                   <input type="text" id="jumlah-orang" class="fadeIn second" name="jadwal-pameran" placeholder="Jadwal">
                   <input type="text" id="hari-tgl" class="fadeIn second" name="lokasi-pameran" placeholder="Lokasi">
                   <input type="text" id="jam" class="fadeIn second" name="gmaps-pameran" placeholder="Gmaps">
+                  <label class="fadeIn second sizelabelinput" for="foto-pameran">Unggah Foto Wisata</label>
+                  <input type="file" id="foto-pameran" class="fadeIn second" name="foto-pameran">
                   <input type="submit" class="fadeIn fourth" value="Submit" type="button" onclick="submitForm('pameran')">
                 </form>
               </div>
             </div>
           </div>
-          <!-- end pop up festival -->
+          <!-- end pop up pameran -->
         </div>
       </div>
 

@@ -509,7 +509,8 @@ input[type="reset"]:active {
 }
 
 input[type="text"],
-input[type="number"] {
+input[type="number"],
+input[type="file"] {
   background-color: #f6f6f6;
   border: none;
   color: #0d0d0d;
@@ -678,4 +679,10 @@ input[type="number"]:placeholder {
 
 * {
   box-sizing: border-box;
+}
+
+.sizelabelinput {
+  text-align: left;
+  padding-top: 1.5em;
+  width: 85%;
 }
