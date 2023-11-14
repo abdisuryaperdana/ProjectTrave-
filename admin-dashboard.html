@@ -396,7 +396,7 @@
                 <!-- Tabs Titles -->
                 <h5>Tambah Kegiatan Festival</h5>
                 <!-- Login Form -->
-                <form>
+                <form id="formfest">
                   <input
                     type="text"
                     id="nama-kegiatan-festival"
@@ -447,10 +447,62 @@
                     type="submit"
                     class="fadeIn fourth"
                     value="Submit"
-                    type="button"
-                    onclick="submitForm('festival')"
+            
                   />
+                  <!-- <input
+                    type="text"
+                    id="foto"
+                    class="fadeIn second"
+                    name="foto"
+                    placeholder="foto"
+                  /> -->
                 </form>
+                <script>
+                  const formfest = document.querySelector("#formfest");
+
+                  formfest.addEventListener("submit", async (event) => {
+                    event.preventDefault();
+
+                    const nama = document.getElementById("nama-kegiatan-festival").value;
+                    const deskripsi = document.getElementById("deskripsi-festival").value;
+                    const jadwal = document.getElementById("jadwal-festival").value;
+                    const lokasi = document.getElementById("lokasi-festival").value;
+                    const gmaps = document.getElementById("gmaps-festival").value;
+                    const foto = document.getElementById("foto").value;
+
+                    const data = {
+                      nama,
+                      deskripsi,
+                      jadwal,
+                      lokasi,
+                      gmaps,
+                      foto,
+                    
+                    };
+
+                    const response = await fetch("http://localhost:8000/addfest", {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify(data),
+                      log:console.log(data),
+                      
+                    });
+
+                    const result = await response.json();
+                    console.log(result);
+
+                    if (result.success) {
+                      alert("Terima Kasih, Booking berhasil!");
+                      formfest.reset();
+                      window.location.reload();
+                    } else {
+                      alert("Booking gagal!");
+                      formfest.reset();
+                    }
+                  });
+                </script>
               </div>
             </div>
           </div>
