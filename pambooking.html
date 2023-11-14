@@ -62,60 +62,122 @@
     <!-- End Header/Navigation -->
 
     <!-- Start Hero Section -->
+    <div id="festBooking">
+      <script>
+        // Select the HTML element where you want to display the data
+        const pamContainer = document.getElementById("festBooking");
 
-    <!--  NANTI GAMBARNYA SESUAI DENGAN GAMBAR KEGIATANNYA -->
-    <div class="hero overlayblue" style="background-image: url('images/niasfestival.jpg');">
-    <!--  NANTI GAMBARNYA SESUAI DENGAN GAMBAR KEGIATANNYA -->
-      <div class="container">
-        <div class="row justify-content-between">
-          <div class="col-lg-12">
-            <div class="intro-excerpt">
-              <center><h1 style="font-size: 75px;">Ya'ahowu Nias Festival</h1></center>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!-- End Hero Section -->
+        // Extract the id parameter from the URL
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get("id");
 
-    <!-- Start Form Section -->
-	<div class="untree_co-section">
-        <div class="container">
-            <div class="block">
-                <div class="row justify-content-center">
-                    <div class="col-md-8 col-lg-8 pb-4">
-                        <div class="row mb-5">
-                            <form>
-                                <div class="form-group mb-2">
-                                    <label class="text-black" for="nama">Nama Lengkap</label>
-                                    <input type="text" class="form-control" id="nama">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <label class="text-black" for="no_hp">No. Handphone</label>
-                                    <input type="text" class="form-control" id="no_hp">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <label class="text-black" for="jml_org">Jumlah Orang</label>
-                                    <input type="text" class="form-control" id="jml_org">
-                                </div>
-                                <div class="form-group mb-2">
-                                    <label class="text-black" for="jam">Jam</label>
-                                    <input type="text" class="form-control" id="jam">
-                                </div>
-                                <div class="form-group mb-5">
-                                    <label class="text-black" for="tanggal">Tanggal</label>
-                                    <input type="text" class="form-control" id="tanggal">
-                                </div>
-
-                                <button type="submit" class="btn btn-secondary">Booking</button>
-                            </form>
-                        </div>
+        // Fetch the data for the specified id
+        fetch(`http://localhost:8000/pameran/${id}`)
+          .then((response) => response.json())
+          .then((data) => {
+            // Map the data from the response rows
+            const pam = data;
+            const pamElement = `
+              <div
+                class="hero overlayblue"
+                style="background-image: url('images/${pam.data.foto}')"
+              >
+                <div class="container">
+                  <div class="row justify-content-between">
+                    <div class="col-lg-12">
+                      <div class="intro-excerpt">
+                        <center>
+                          <h1 style="font-size: 75px" id="kegiatan">${pam.data.nama}</h1>
+                        </center>
+                      </div>
                     </div>
+                  </div>
                 </div>
-            </div>
-        </div>
+              </div>
+              <!-- End Hero Section -->
+
+              <!-- Start Form Section -->
+              <div class="untree_co-section">
+                <div class="container">
+                  <div class="block">
+                    <div class="row justify-content-center">
+                      <div class="col-md-8 col-lg-8 pb-4">
+                        <div class="row mb-5">
+                          <form>
+                            <div class="form-group mb-2">
+                              <label class="text-black" for="nama">Nama Lengkap</label>
+                              <input type="text" class="form-control" id="nama" />
+                            </div>
+                            <div class="form-group mb-2">
+                              <label class="text-black" for="no_hp">No. Handphone</label>
+                              <input type="text" class="form-control" id="nohp" />
+                            </div>
+                            <div class="form-group mb-2">
+                              <label class="text-black" for="jml_org">Jumlah Orang</label>
+                              <input type="text" class="form-control" id="jmlorg" />
+                            </div>
+                            <div class="form-group mb-2">
+                              <label class="text-black" for="jam">Jam</label>
+                              <input type="text" class="form-control" id="jam" />
+                            </div>
+                            <div class="form-group mb-5">
+                              <label class="text-black" for="tanggal">Tanggal</label>
+                              <input type="text" class="form-control" id="jadwal" />
+                            </div>
+
+                            <input type="submit" class="btn btn-secondary" />
+                          </form>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <!-- End Form Section -->
+              `;
+            pamContainer.innerHTML = pamElement;
+            const form = document.querySelector("form");
+
+            form.addEventListener("submit", async (event) => {
+              event.preventDefault();
+
+              const nama = document.getElementById("nama").value;
+              const nohp = document.getElementById("nohp").value;
+              const jumlahorang = document.getElementById("jmlorg").value;
+              const jadwal = document.getElementById("jadwal").value;
+              const kegiatan = `${pam.data.nama}`;
+              const jam = document.getElementById("jam").value;
+
+              const data = {
+                nama,
+                nohp,
+                jumlahorang,
+                jadwal,
+                kegiatan,
+                jam,
+              };
+
+              const response = await fetch("http://localhost:8000/book", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(data),
+              });
+
+              const result = await response.json();
+              if (result.success) {
+                alert("Terima Kasih, Booking berhasil!");
+                form.reset();
+                window.location.href = "index.html";
+              } else {
+                alert("Booking gagal!");
+                form.reset();
+              }
+            });
+          });
+      </script>
     </div>
-    <!-- End Form Section -->
 
     <!-- Start Footer Section -->
     <footer class="footer-section">
